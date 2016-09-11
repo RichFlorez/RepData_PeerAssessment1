@@ -60,7 +60,7 @@ mean_steps <- mean(steps_per_day$steps)
 median_steps <- median(steps_per_day$steps)
 ```
 
-The mean is **`r mean_steps`** and the median is **`r median_steps`**
+The mean is **`r format(round(mean_steps,2))`** and the median is **`r median_steps`**
 
 ##What is the average daily activity pattern?##
 
