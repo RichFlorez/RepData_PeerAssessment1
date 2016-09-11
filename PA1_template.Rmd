@@ -20,7 +20,14 @@ The variables included in this dataset are:
 
 The dataset is stored in a comma-separated-value (CSV) file and there are a total of 17,568 observations in this dataset.
 
-*Below is a summary of the dataset:*
+##Loading and preprocessing the data##
+
+The following packages/libraries were used in the analysis:
+
+```{r}
+```
+
+Below is a summary of the dataset within the relevant working directory:
 
 ```{r}
 setwd("~/datasciencecoursera/ReproRsrch/ProjectWk2/")
@@ -28,10 +35,46 @@ activity <- read.csv("activity.csv")
 summary(activity)
 ```
 
-You can also embed plots, for example:
 
-```{r, echo=FALSE}
-plot(cars)
+##What is the mean total number of steps taken per day?##
+
+*For this part of the assignment, we ignore the missing values in the dataset.*
+
+- Calculate the total number of steps taken per day
+
+```{r}
+steps_per_day <- aggregate(steps ~ date, activity, sum)
+head(steps_per_day)
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+- Histogram of the total number of steps taken each day
+
+```{r}
+hist(steps_per_day$steps,col="grey",main=("Total Steps Per Day"),xlab="Number of Steps")
+```
+
+- Calculate and report the mean and median of the total number of steps taken per day
+
+```{r}
+mean_steps <- mean(steps_per_day$steps)
+median_steps <- median(steps_per_day$steps)
+```
+
+The mean is **`r mean_steps`** and the median is **`r median_steps`**
+
+##What is the average daily activity pattern?##
+
+```{r}
+
+```
+##Imputing missing values##
+
+```{r}
+
+```
+
+##Are there differences in activity patterns between weekdays and weekends?##
+
+```{r}
+
+```
